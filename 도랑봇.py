@@ -1,6 +1,6 @@
 import discord
 import random
-
+import os
 
 
 client = discord.Client()
@@ -46,5 +46,7 @@ async def on_message(message):
             embed.set_footer(text="By 도랑")
             embed.set_thumbnail(url=a)
             await client.send_message(message.channel, embed=embed)
-                                
-client.run('NTQ4ODU3NzgzNTUwODY5NTI1.D1LbQQ.CG-9TQJcBlV54mVUJamLVc4Fgc0')
+
+            
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
